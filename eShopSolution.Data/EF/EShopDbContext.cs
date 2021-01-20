@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using eShopSolution.Data.Configuaration;
 
 namespace eShopSolution.Data.EF
 {
@@ -12,6 +13,24 @@ namespace eShopSolution.Data.EF
         {
             
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new AppConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductConfiguration());
+            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductInCategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new OrderConfiguration());
+            modelBuilder.ApplyConfiguration(new OrderDetailConfiguration());
+            modelBuilder.ApplyConfiguration(new CartConfiguration());
+            modelBuilder.ApplyConfiguration(new CategoryTransactionConfiguration());
+            modelBuilder.ApplyConfiguration(new ContactConfiguration());
+            modelBuilder.ApplyConfiguration(new LanguageConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductTransacsionConfiguration());
+            modelBuilder.ApplyConfiguration(new PromotionConfiguration());
+            modelBuilder.ApplyConfiguration(new TransactionConfiguration());
+
+            //base.OnModelCreating(modelBuilder);
+        }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Cart> Carts { get; set; }
@@ -20,7 +39,7 @@ namespace eShopSolution.Data.EF
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<ProductTransaction> ProductTransactions { get; set; }
         public DbSet<CatogriesTransacsion> CatogriesTransacsions { get; set; }
-        public DbSet<Promotios> Promotios { get; set; }
+        public DbSet<Promotion> Promotios { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Language> Languages { get; set; }
         public DbSet<AppConfig> AppConfigs { get; set; }
