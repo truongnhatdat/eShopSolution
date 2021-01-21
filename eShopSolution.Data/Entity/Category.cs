@@ -13,6 +13,6 @@ namespace eShopSolution.Data.Entity
         public int? ParentId { get; set; }
         public Status Status { get; set; }
         public List<ProductInCategory> productInCategories { get; set; }
-        public List<CatogriesTransacsion> CatogriesTransacsions { get; set; }
+        public List<CategoryTransacsion> CatogriesTransacsions { get; set; }
     }
 }
