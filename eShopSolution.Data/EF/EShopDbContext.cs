@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using eShopSolution.Data.Configuaration;
+using eShopSolution.Data.Extensions;
 
 namespace eShopSolution.Data.EF
 {
@@ -29,6 +30,8 @@ namespace eShopSolution.Data.EF
             modelBuilder.ApplyConfiguration(new PromotionConfiguration());
             modelBuilder.ApplyConfiguration(new TransactionConfiguration());
 
+            //Seed Data
+            modelBuilder.Seed();
             //base.OnModelCreating(modelBuilder);
         }
         public DbSet<Product> Products { get; set; }
@@ -38,7 +41,7 @@ namespace eShopSolution.Data.EF
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<ProductTransaction> ProductTransactions { get; set; }
-        public DbSet<CatogriesTransacsion> CatogriesTransacsions { get; set; }
+        public DbSet<CategoryTransacsion> CatogriesTransacsions { get; set; }
         public DbSet<Promotion> Promotios { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Language> Languages { get; set; }

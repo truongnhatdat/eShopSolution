@@ -10,6 +10,6 @@ namespace eShopSolution.Data.Entity
         public string Name { get; set; }
         public bool IsDefault { get; set; }
         public List<ProductTransaction> ProductTransactions { get; set; }
-        public List<CatogriesTransacsion> CatogriesTransacsions { get; set; }
+        public List<CategoryTransacsion> CatogriesTransacsions { get; set; }
     }
 }

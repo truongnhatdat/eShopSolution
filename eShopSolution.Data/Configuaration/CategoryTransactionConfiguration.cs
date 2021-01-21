@@ -7,9 +7,9 @@ using System.Text;
 
 namespace eShopSolution.Data.Configuaration
 {
-    public class CategoryTransactionConfiguration : IEntityTypeConfiguration<CatogriesTransacsion>
+    public class CategoryTransactionConfiguration : IEntityTypeConfiguration<CategoryTransacsion>
     {
-        public void Configure(EntityTypeBuilder<CatogriesTransacsion> builder)
+        public void Configure(EntityTypeBuilder<CategoryTransacsion> builder)
         {
             builder.ToTable("CategoryTransactions");
 
